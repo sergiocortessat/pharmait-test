@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
-import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import NavBar from './Components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-     Pharma IT
+    <BrowserRouter>
+      <div className="App">
+     <NavBar />
     </div>
+    </BrowserRouter>
   );
 }
 
