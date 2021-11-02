@@ -4,16 +4,8 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reducers from './Redux/Reducers';
-import { fetchUser,fetchConditionConfiguration } from './API/apiCalls';
-import thunk from 'redux-thunk';
-import {fetchStaff} from './Redux/Thunks/FetchUsers';
-import {fetchConfigurationCondition} from './Redux/Thunks/FetchConditionConfiguration';
+import Store from './Redux/Store'
 
-const store = createStore(reducers,applyMiddleware(thunk));
-store.dispatch(fetchStaff());
-store.dispatch(fetchConfigurationCondition());
 // Promise.all([fetchUser(),fetchConditionConfiguration()]).then((resp) => {
 //   console.log(resp[0]);
 //  store.dispatch({
@@ -26,6 +18,7 @@ store.dispatch(fetchConfigurationCondition());
 //   });
  
 // });
+const store = Store()
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
