@@ -1,9 +1,7 @@
-import axios from "axios";
-
 const ALL_CONDITION_CONFIGURATION = 'ALL_CONDITION_CONFIGURATION';
 const ALL_USER_DATA = 'ALL_USER_DATA';
 
-export const updateConditionConfiguration = (conditions:any) => ({
+export const conditionConfiguration = (conditions:any) => ({
   type: ALL_CONDITION_CONFIGURATION,
   payload: conditions,
 });

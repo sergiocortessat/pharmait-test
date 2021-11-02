@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar />
-        <img src="https://api-test.pharmit.de/profile_img/56" alt="" />
         <Switch>
           <Route path="/" component={Home} />
         </Switch>

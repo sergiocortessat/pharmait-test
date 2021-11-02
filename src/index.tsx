@@ -4,19 +4,27 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from './Redux/Reducers';
-import { fetchUser } from './API/apiCalls';
+import { fetchUser,fetchConditionConfiguration } from './API/apiCalls';
+import thunk from 'redux-thunk';
+import {fetchStaff} from './Redux/Thunks/FetchUsers';
+import {fetchConfigurationCondition} from './Redux/Thunks/FetchConditionConfiguration';
 
-const store = createStore(reducers);
-fetchUser().then((user) => {
-  store.dispatch({
-    type: 'ALL_USER_DATA',
-    payload: user
-  });
-});
-// fetchUser().then((user) => {
-//  console.log(user);
+const store = createStore(reducers,applyMiddleware(thunk));
+store.dispatch(fetchStaff());
+store.dispatch(fetchConfigurationCondition());
+// Promise.all([fetchUser(),fetchConditionConfiguration()]).then((resp) => {
+//   console.log(resp[0]);
+//  store.dispatch({
+//    type: 'ALL_USER_DATA',
+//    payload: resp[0]
+//  });
+//   store.dispatch({
+//     type: 'ALL_CONDITION-CONFIGURATIONS',
+//     payload: resp[1]
+//   });
+ 
 // });
 ReactDOM.render(
   <React.StrictMode>
