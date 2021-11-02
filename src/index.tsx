@@ -6,8 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './Redux/Reducers';
+import { fetchUser } from './API/apiCalls';
 
 const store = createStore(reducers);
+fetchUser().then((user) => {
+  store.dispatch({
+    type: 'ALL_USER_DATA',
+    payload: user
+  });
+});
+// fetchUser().then((user) => {
+//  console.log(user);
+// });
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

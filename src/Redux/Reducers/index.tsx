@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import Condition from './reducers';
+import reducer from './reducers';
 
 const reducers = combineReducers({
-  condition: Condition
+  data: reducer
 });
 
 export default reducers;

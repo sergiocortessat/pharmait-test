@@ -1,11 +1,18 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
+import '../Styles/NavBar.scss'
 
 const NavBar = () => {
     return (
-        <div>
-            <h1>NavBar</h1>
-        </div>
+       <nav className="navbar">
+           <div className="navbar-left">
+               <img src="https://api-test.pharmit.de/static/pharm-it-logo.jpg" alt="pharmait-logo" />
+               <p>Organization-name</p>
+           </div>
+           <div className="navbar-right">
+                <p>User-name</p>
+                <img src="" alt="user-icon" />
+           </div>
+       </nav>
     )
 }
 

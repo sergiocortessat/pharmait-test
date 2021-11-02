@@ -1,0 +1,30 @@
+// navbar stick to top
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+
+  .navbar-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1em;
+
+    img {
+      width: 100%;
+        height: 60px;
+      margin-right: 20px;
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1em;
+  }
+}

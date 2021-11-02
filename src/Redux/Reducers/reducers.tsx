@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 const initialState = {
-  userData: [],
+  userData: {},
   conditionConfiguration: [],
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action:any) => {
   switch (action.type) {
-    case 'ALL_USER':
+    case 'ALL_USER_DATA':
       return {
         ...state,
         userData: action.payload,
