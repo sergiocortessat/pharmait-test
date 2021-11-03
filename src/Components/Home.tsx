@@ -12,11 +12,18 @@ const Home = () => {
   const { userData, conditionConfiguration } = useSelector(
     (state: IProps) => state.data
   );
-console.log(conditionConfiguration);
-console.log(userData);
   return (
     <div>
-      <h1>Home</h1>
+      {conditionConfiguration.configuration && conditionConfiguration.configuration.map((item: any) => {
+        return (
+          <div key={item.return_value}>
+            <h1>{item.return_value}</h1>
+            <p>{item.condition.condition_parameter_1}</p>
+            <p>{item.condition.condition_operator}</p>
+            <p>{item.condition.condition_parameter_2}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
