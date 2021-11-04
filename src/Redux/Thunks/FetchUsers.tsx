@@ -1,5 +1,11 @@
 import {userData} from '../Actions'
+import { Dispatch, AnyAction } from 'redux'
 
+
+interface IProps {
+  type: string, 
+  payload: {};
+}
 export const fetchStaff = () => {
     return async (dispatch:any) =>  {
         const setting = {

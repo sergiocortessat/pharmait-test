@@ -1,12 +1,12 @@
 const ALL_CONDITION_CONFIGURATION = 'ALL_CONDITION_CONFIGURATION';
 const ALL_USER_DATA = 'ALL_USER_DATA';
 
-export const conditionConfiguration = (conditions:any) => ({
+export const conditionConfiguration = (conditions : {}) => ({
   type: ALL_CONDITION_CONFIGURATION,
   payload: conditions,
 });
 
-export const userData = (userData:any) => ({
+export const userData = (userData: {}) => ({
   type: ALL_USER_DATA,
   payload: userData,
 });

@@ -1,7 +1,14 @@
+import { AnyAction } from 'redux'
+
 const initialState = {
   userData: {},
   conditionConfiguration: {},
 };
+
+interface IProps {
+  type: string, 
+  payload: {};
+}
 
 const reducer = (state = initialState, action:any) => {
   switch (action.type) {

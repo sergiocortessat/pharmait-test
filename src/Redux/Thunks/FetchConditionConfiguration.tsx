@@ -1,7 +1,13 @@
 import {conditionConfiguration} from '../Actions'
+import { Dispatch, AnyAction } from 'redux'
+
+interface IProps {
+  type: string, 
+  payload: {};
+}
 
 export const fetchConfigurationCondition = () => {
-    return async (dispatch:any) =>  {
+    return async (dispatch: any) =>  {
         const setting = {
             method: "GET",
             headers: {
