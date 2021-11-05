@@ -11,22 +11,21 @@ export interface Condition {
 }
 
 export interface Configurations {
-  return_value?: string;
-  condition?: Condition;
+  return_value: string;
+  condition: Condition;
 }
 
 interface SelectProps {
-  vendorDetails?: Configurations;
+  vendorDetails: Configurations;
 }
 
 const SelectForm = ({ vendorDetails }: SelectProps) => {
+  console.log(vendorDetails);
   return (
     <Form.Select className="select" aria-label="Default select example">
-      <Form.Label>Yes</Form.Label>
-      <option>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value={vendorDetails.condition.condition_operator}>{vendorDetails.condition.condition_operator}</option>
+      <option value="<=">{'<='}</option>
+      <option value="==">{'='}</option>
     </Form.Select>
   );
 };
