@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import Store from './Redux/Store'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Promise.all([fetchUser(),fetchConditionConfiguration()]).then((resp) => {
 //   console.log(resp[0]);

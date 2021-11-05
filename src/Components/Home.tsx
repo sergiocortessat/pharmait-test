@@ -1,24 +1,30 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../Styles/Home.scss";
+import Table from "../Utilities/Table";
 
-interface UserData {
+export interface Condition {
+  condition_parameter_1: string;
+
+  condition_operator: string;
+
+  condition_parameter_2: string;
+}
+
+export interface UserData {
   id: number;
   organization_id: number;
   first_name: string;
   last_name: string;
-  profile_img: string; 
+  profile_img: string;
 }
 
-interface Configurations {
+export interface Configurations {
   return_value: string;
-  condition: {
-    condition_parameter_1: string;
-    condition_parameter_2: string;
-    condition_operator: string;
-  }
+  condition: Condition;
 }
 
-interface ConditionConfiguration {
+export interface ConditionConfiguration {
   id: number;
   name: string;
   author_id: number;
@@ -28,11 +34,11 @@ interface ConditionConfiguration {
   configuration: Configurations[];
 }
 
-interface IProps {
-    data: {
-        userData: UserData,
-        conditionConfiguration: ConditionConfiguration
-    }
+export interface IProps {
+  data: {
+    userData: UserData;
+    conditionConfiguration: ConditionConfiguration;
+  };
 }
 
 const Home = () => {
@@ -41,18 +47,10 @@ const Home = () => {
   );
   console.log(userData);
   console.log(conditionConfiguration);
+  const { configuration } = conditionConfiguration;
   return (
-    <div>
-      {conditionConfiguration.configuration && conditionConfiguration.configuration.map((item) => {
-        return (
-          <div key={item.return_value}>
-            <h1>{item.return_value}</h1>
-            <p>{item.condition.condition_parameter_1}</p>
-            <p>{item.condition.condition_operator}</p>
-            <p>{item.condition.condition_parameter_2}</p>
-          </div>
-        );
-      })}
+    <div className="table-container">
+      <Table configuration={configuration} />
     </div>
   );
 };

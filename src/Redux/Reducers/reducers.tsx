@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux'
+import { AnyAction,Dispatch } from 'redux'
 
 const initialState = {
   userData: {},
@@ -9,8 +9,12 @@ interface IProps {
   type: string, 
   payload: {};
 }
+//Typescrip action.payload
 
-const reducer = (state = initialState, action:any) => {
+
+
+
+const reducer = (state = initialState, action: any ) : any => {
   switch (action.type) {
     case 'ALL_USER_DATA':
       return {
