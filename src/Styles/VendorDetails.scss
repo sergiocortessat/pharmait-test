@@ -1,7 +1,10 @@
 .vendor-details {
+    width: 90%;
+    margin: 0 auto; 
+    label {
     display: flex;
     flex-direction: column;
-    width: 90%;
     justify-items: center;
     align-items: center;
+}
 }
