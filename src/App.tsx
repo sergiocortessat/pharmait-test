@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import NavBar from "./Components/NavBar";
-import VendorDetails from "./Components/VendorDetails";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './Components/Home';
+import NavBar from './Components/NavBar';
+import VendorDetails from './Components/VendorDetails';
 
 function App() {
   return (

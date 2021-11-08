@@ -1,14 +1,14 @@
 const ALL_CONDITION_CONFIGURATION = 'ALL_CONDITION_CONFIGURATION';
 const ALL_USER_DATA = 'ALL_USER_DATA';
 
-export const conditionConfiguration = (conditions : {}) => ({
+export const conditionConfiguration = (conditions : any) => ({
   type: ALL_CONDITION_CONFIGURATION,
   payload: conditions,
 });
 
-export const userData = (userData: {}) => ({
+export const userData = (userDataa: any) => ({
   type: ALL_USER_DATA,
-  payload: userData,
+  payload: userDataa,
 });
 
 // export const fetchPosts =  () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import Store from './Redux/Store'
-import "bootstrap/dist/css/bootstrap.min.css";
+import Store from './Redux/Store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Promise.all([fetchUser(),fetchConditionConfiguration()]).then((resp) => {
 //   console.log(resp[0]);
@@ -17,16 +17,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //     type: 'ALL_CONDITION-CONFIGURATIONS',
 //     payload: resp[1]
 //   });
- 
+
 // });
-const store = Store()
+const store = Store();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,32 +1,32 @@
-import { Table, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Configurations } from "../Components/Home";
-import "../Styles/Table.scss";
+import React from 'react';
+import { Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Configurations } from '../Components/Home';
+import '../Styles/Table.scss';
 
 interface Props {
   configuration: Configurations[];
 }
 
-const TableForm = ({ configuration }: Props) => {
-  return (
-    <Table striped bordered hover className="boots-table" variant="dark">
-      <thead>
-        <tr>
-          <th>Vendor</th>
+const TableForm = ({ configuration }: Props) => (
+  <Table striped bordered hover className="boots-table" variant="dark">
+    <thead>
+      <tr>
+        <th>Vendor</th>
 
-          <th>Condition Parameter 1</th>
+        <th>Condition Parameter 1</th>
 
-          <th>Condition Operator</th>
+        <th>Condition Operator</th>
 
-          <th>Condition Parameter 2</th>
+        <th>Condition Parameter 2</th>
 
-          <th>Edit</th>
-        </tr>
-      </thead>
+        <th>Edit</th>
+      </tr>
+    </thead>
 
-      <tbody>
-        {configuration &&
-          configuration.map((item) => (
+    <tbody>
+      {configuration
+          && configuration.map((item) => (
             <tr key={item.return_value}>
               <td>{item.return_value}</td>
 
@@ -38,16 +38,15 @@ const TableForm = ({ configuration }: Props) => {
 
               <td>
                 <Link to={`/dashboard/${item.return_value}`}>
-                  <Button type='button' variant="secondary">
+                  <Button type="button" variant="secondary">
                     Edit
                   </Button>
                 </Link>
               </td>
             </tr>
           ))}
-      </tbody>
-    </Table>
-  );
-};
+    </tbody>
+  </Table>
+);
 
 export default TableForm;
