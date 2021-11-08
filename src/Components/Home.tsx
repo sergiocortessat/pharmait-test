@@ -1,7 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "../Styles/Home.scss";
-import Table from "../Utilities/Table";
+/* eslint-disable camelcase */
+import React from 'react';
+import { useSelector } from 'react-redux';
+import '../Styles/Home.scss';
+import Table from '../Utilities/Table';
 
 export interface Condition {
   condition_parameter_1: string;
@@ -43,7 +44,7 @@ export interface IProps {
 
 const Home = () => {
   const { userData, conditionConfiguration } = useSelector(
-    (state: IProps) => state.data
+    (state: IProps) => state.data,
   );
   console.log(userData);
   console.log(conditionConfiguration);
