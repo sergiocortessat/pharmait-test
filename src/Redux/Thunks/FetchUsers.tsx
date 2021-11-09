@@ -5,7 +5,7 @@ interface IProps {
   type: string,
   payload: unknown;
 }
-export const fetchStaff = () => async function (dispatch: any) {
+export const fetchStaff = () => async (dispatch: any) => {
   const setting = {
     method: 'GET',
     headers: {

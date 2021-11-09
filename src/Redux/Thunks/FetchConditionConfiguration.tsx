@@ -6,7 +6,7 @@ interface IProps {
   payload: unknown;
 }
 
-export const fetchConfigurationCondition = () => async function (dispatch: any) {
+export const fetchConfigurationCondition = () => async (dispatch: any) => {
   const setting = {
     method: 'GET',
     headers: {
