@@ -13,6 +13,7 @@ function App() {
           <Route path="/dashboard/:vendor" component={VendorDetails} />
           <Route exact path="/" component={Home} />
         </Switch>
+        <h2>{process.env.REACT_APP_NAME}</h2>
       </div>
     </BrowserRouter>
   );
