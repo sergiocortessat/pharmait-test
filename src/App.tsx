@@ -14,6 +14,7 @@ function App() {
           <Route exact path="/" component={Home} />
         </Switch>
         <h2>{process.env.REACT_APP_NAME}</h2>
+        <h2>Testing further</h2>
       </div>
     </BrowserRouter>
   );

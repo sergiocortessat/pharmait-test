@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile.prod
       args:
-        - REACT_APP_NAME=sergio
+        - REACT_APP_NAME=sergio-prod
     ports:
       - "8080:80"
